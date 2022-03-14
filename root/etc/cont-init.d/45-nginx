@@ -1,6 +1,8 @@
 #!/usr/bin/with-contenv bash
 
 # copy default config files if they don't exist
+[[ ! -f /config/nginx/http-confs/unauthorized.conf ]] && \
+    cp /defaults/nginx/http-confs/unauthorized.conf.sample /config/nginx/http-confs/unauthorized.conf
 [[ ! -f /config/nginx/location-confs/proxy.conf ]] && \
     cp /defaults/nginx/location-confs/proxy.conf.sample /config/nginx/location-confs/proxy.conf
 [[ ! -f /config/nginx/server-confs/502.conf ]] && \
